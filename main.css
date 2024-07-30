@@ -1,0 +1,791 @@
+@font-face {
+    font-family: "PG Gene";
+    src: url('font/pggene__.ttf');
+    font-kerning: normal;
+}
+@font-face {
+    font-family: "Vera";
+    src: url('font/VeraBI.ttf');
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Vera";
+    src: url('font/VeraIt.ttf');
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Libertine";
+    src: url('font/LinLibertine_aZL.ttf');
+}
+
+:root {
+    --bg-color: #0d0d0f;
+    --panel-color: #2f2f40;
+    --text-color: #f5f4f1;
+    --heading-color: #817b97;
+    --panel-highlight-color: #d40a3a;
+    --func-highlight-color: #01f55d;
+}
+
+html {
+    background-color: var(--bg-color);
+    background-image: url('img/bg-grid.png');
+    background-size: 20mm;
+    background-repeat: repeat;
+}
+
+body {
+    margin: 0;
+    color: var(--text-color);
+    font: bold .8rem "Vera";
+    overflow: overlay;
+}
+
+header, footer {
+    background-color: var(--panel-color);
+}
+
+h1 {
+    font: 6rem "PG Gene";
+    margin: 0;
+    transform-origin: 0 0;
+    transform: scaleX(.85);
+}
+
+h2, nav a {
+    font: bold 1.8rem "Vera";
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+h3 {
+    font: bold 1.5rem "Vera";
+    margin: 0;
+    color: var(--panel-highlight-color);
+    text-transform: uppercase;
+}
+
+h4 {
+    font: 1.25rem "Libertine";
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--heading-color);
+}
+
+p {
+    font: bold .8rem "Vera";
+    margin: 0;
+    margin-bottom: .75rem;
+}
+
+.panel-highlight {
+    background-color: var(--panel-highlight-color);
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+
+#title-text > h1 {
+    margin-left: .75rem;
+}
+
+#title-text > h3 {
+    position: absolute;
+    text-align: right;
+    top: 5rem;
+    width: 100%;
+}
+
+.header-highlight {
+    position: absolute;
+    left: 0; right: 0;
+}
+
+.scrolling-banner {
+    background-color: white;
+    min-height: 5rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    display: flex;
+    margin-left: 0vw;
+    overflow: hidden;
+}
+
+.banner-transition {
+    transition: margin-left .5s ease-in-out; 
+}
+
+.banner-slide {
+    max-width: calc(100vw - var(--scrollbar-width));
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+}
+
+#main {
+    padding-left: .5rem;
+    padding-right: .5rem;
+    display: block;
+    position: relative;
+    margin-bottom: .5rem;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    padding-left: 0rem;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:active {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.panel {
+    position: relative;
+    background-color: var(--panel-color);
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.chuuni-text {
+    font-size: 1rem;
+    color: var(--panel-color);
+    position: absolute;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: -1;
+    display: none;
+}
+
+nav > .chuuni-text {
+    transform-origin: 0 0; 
+    transform: scaleY(.9) rotate(-90deg); 
+    left: -.9rem; 
+    top: 14.75rem;
+    bottom: 0rem;
+}
+
+#main-content, #modal-main-content {
+    margin-top: 0rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 2rem;
+    min-height: 30rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#main-content > .chuuni-text {
+    transform-origin: 0 0;
+    transform: scaleX(.9);
+    top: -.9rem;
+    text-align: right;
+    right: 1rem;
+}
+
+#main-content-highlight {
+    position: absolute;
+    left: 0; right: 0; top: 2rem;
+}
+
+#main-content-title {
+    position: absolute;
+    top: 0rem;
+    font-size: 3.5rem;
+    margin-left: .1rem;
+    margin-top: .3rem;
+}
+
+.info-box {
+    background-color: var(--heading-color);
+}
+
+#main-content-info-box, #modal-info-box {
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+    margin-bottom: auto;
+    float: right;
+    margin-left: 1.5rem;
+    margin-right: -1.7rem;
+    width: 14rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: .25rem;
+}
+
+#modal-info-box {
+    margin-left: 0;
+    margin-right: 0;
+    float: none;
+}
+
+.info-box-image-container {
+    background-color: var(--bg-color);
+    margin-top: 1.75rem;
+    margin-bottom: .5rem;
+    padding: .15rem;
+}
+
+.info-box-image-container h4 {
+    margin: 0;
+    margin-bottom: -.475rem;
+    margin-left: 1.5rem;
+    margin-top: .35rem;
+    margin-right: .9rem;
+}
+
+table {
+    margin-bottom: .25rem;
+    margin-left: .75rem;
+    margin-right: .75rem;
+    font-size: .8em;
+    color: var(--panel-color);
+    border: 2px solid var(--heading-color);
+    border-collapse: collapse;
+}
+
+th {
+    border: 1px dotted var(--panel-color);
+}
+
+th:first-child {
+    text-align: right;
+    padding-right: .25rem;
+}
+th:last-child {
+    text-align: left;
+    padding-left: .25rem;
+    font-weight: normal;
+    color: var(--bg-color);
+}
+
+.info-box .info-box-img {
+    background-size: cover;
+    background-position: center;
+    height: 14rem;
+}
+
+#project-modal .info-box-img {
+    height: 8rem;
+}
+
+#main-content-text {
+    padding-top: 5rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    min-height: 12rem;
+}
+
+#main-content-text p, #project-modal p, #main-content-text li, #project-modal li {
+    font-weight: normal;
+    font-size: .95em;
+    line-height: 1.4em;
+    margin-left: .75rem;
+    margin-top: .25rem;
+
+    margin-bottom: .75rem;
+}
+
+#project-modal ul, #main-content-text ul {
+    list-style-type: disc;
+    list-style-position: outside;
+}
+
+#project-modal li, #main-content-text li {
+    margin-left: 2rem;
+}
+
+#gallery {
+    position: relative;
+    margin-left: 1rem;
+    
+    margin-bottom: 5rem;
+    top: 1rem;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    align-content: space-between;
+    gap: .5rem .5rem;
+}
+
+#gallery .info-box {
+    padding: .25rem;
+    min-width: 12rem;
+    width: 12rem;
+    height: 14rem;
+
+    flex: 1 0 21%;
+    display: flex;
+    flex-direction: column;
+
+    cursor: pointer;
+}
+
+#gallery .info-box-image-container {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#gallery .info-box .info-box-img {
+    height: 7rem;
+}
+
+#gallery .info-box > div:last-child {
+    width: 100%;
+    flex-grow: 1;
+    margin-bottom: -.25rem;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.gallery-box-short-desc {
+    position: absolute;
+    margin-left: 2.5rem;
+    margin-right: 4rem;
+    margin-top: .15rem;
+    margin-bottom: 0;
+    text-align: left;
+    font-weight: normal;
+    font-size: .95em;
+    color: var(--panel-color);
+}
+
+footer {
+    position: relative;
+}
+
+#footer-highlight {
+    position: absolute;
+    left: 0; right: 0; top: .75rem;
+}
+
+footer > .chuuni-text {
+    transform-origin: 0 0;
+    transform: scaleX(.9);
+    top: -.9rem;
+    left: 1rem;
+}
+
+#footer-links {
+    padding-top: 3.75rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.vr {
+    display: inline-block;
+    background-color: var(--heading-color);
+    width: 2px;
+    height: 1.25em;
+    margin: 0;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    position: relative;
+    top: .175rem;
+}
+
+nav .vr {
+    height: 1.5em;
+    top: 0.05rem;
+}
+nav.panel {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: .5rem;
+}
+nav h4 {
+    display: none;
+}
+nav li {
+    display: inline;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+nav ul {
+    display: inline;
+    margin: 0;
+}
+nav a {
+    font-size: 1.25rem;
+    letter-spacing: 0;
+}
+
+p a:link, p a:visited, ul a:link, ul a:visited {
+    color: var(--panel-highlight-color);
+}
+
+p a:hover, ul a:hover {
+    color: var(--text-color);
+}
+
+nav a:hover {
+    color: var(--panel-highlight-color);
+    text-decoration: none;
+}
+
+img {
+    max-width: 16rem;
+    margin: 1.25rem;
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+}
+
+img.right {
+    float: right;
+    margin-right: 0;
+}
+
+img.left {
+    float: left;
+    margin-left: 0;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.fill {
+    display: block;
+    max-width: fit-content;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.fill-100 {
+    display: block;
+    max-width: fit-content;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#panel-connector {
+    display: none;
+    position: absolute;
+    top: -2rem;
+    left: min(5rem, calc(40% - 10.5rem));
+    width: min(13rem, 28.5%);
+    height: 5rem;
+    border-radius: 1.25rem;
+    padding: 0;
+}
+
+#panel-connector-line {
+    position: absolute;
+    padding: 0;
+    left: 0rem;
+    right: 0rem;
+    top: .9rem;
+    height: .75rem;
+}
+
+#panel-connector-line > div:first-child {
+    position: absolute;
+    padding: 0;
+    left: -6rem;
+    right: 0rem;
+    top: 0rem;
+    bottom: 0rem;
+}
+
+#panel-connector-line > div:nth-child(2) {
+    position: absolute;
+    padding: 0;
+    left: 0rem;
+    right: -1.25rem;
+    top: 0rem;
+    bottom: 0rem;
+}
+
+.panel-connector-top-bit {
+    padding: 0;
+}
+
+.panel-connector-top-bit:first-child {
+    position: absolute;
+    border-radius: .5rem;
+    left: 11%;
+    top: -1rem;
+    bottom: -1rem;
+    width: 3.5rem;
+}
+
+.panel-connector-top-bit:nth-child(2) {
+    position: absolute;
+    border-radius: .5rem;
+    left: calc(11% + 3.8rem);
+    top: -.8rem;
+    bottom: -1rem;
+    width: 2rem;
+}
+
+#project-modal {
+    display: none;
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+
+    overflow-y: auto;
+}
+
+#project-modal-bg {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #000000c3;
+}
+
+#project-modal > .panel {
+    margin: 2rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
+}
+
+#project-modal h1 {
+    margin-top: -1rem;
+}
+
+#project-modal h3 {
+    margin-top: -1rem;
+    margin-left: 10rem;
+}
+
+#close-button {
+    position: absolute;
+    font-size: 2rem;
+    right: .8rem;
+    top: .4rem;
+}
+
+#modal-main-video {
+    border: none;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    margin-bottom: 1rem;
+    width: calc(100% + 2rem);
+    height: 25rem;
+}
+
+#modal-right-column {
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+    margin-left: 1.5rem;
+    margin-right: -1.7rem;
+    float: right;
+    width: 14rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0rem;
+}
+
+#play-button {
+    margin-bottom: .5rem;
+    width: 14rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: .25rem;
+    background-color: var(--heading-color);
+    text-align: center;
+}
+
+#play-button h2 {
+    letter-spacing: 0;
+    font-size: 1.2rem;
+    margin-top: .35rem;
+    margin-bottom: .25rem;
+}
+
+#play-button a:link {
+    text-decoration: none;
+}
+
+#play-button a:visited {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+#play-button a:hover {
+    color: var(--panel-color);
+    text-decoration: none;
+}
+
+#play-button a:active {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 4rem;
+    }
+    .header-highlight {
+        top: 1.83rem;
+        transform: scaleY(.75);
+    }
+    #title-text {
+        height: 4.82rem;
+    }
+    #title-text > h3 {
+        top: 3.4rem;
+        max-width: 99%;
+    }
+    nav a {
+        font-size: 1rem;
+    }
+    nav li {
+        padding-left: .25rem;
+        padding-right: .25rem;
+    }
+    #main-content-info-box {
+        width: 12rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    h1 {
+        font-size: 5rem;
+    }
+    .header-highlight {
+        top: 2.3rem;
+        transform: scaleY(.9);
+    }
+    #title-text {
+        height: 5.67rem;
+    }
+    #title-text > h3 {
+        top: 4.25rem;
+        max-width: 90%;
+    }
+    #main-content-title {
+        margin-left: 2rem;
+        margin-right: .5rem;
+    }
+    #main-content-text {
+        margin-left: 1.9rem;
+    }
+    #main-content-text p {
+        margin-left: 1.25rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    h1 {
+        font-size: 6rem;
+    }
+    .header-highlight {
+        top: 2.85rem;
+        transform: none;
+    }
+
+    #title-text {
+        height: 6.42rem;
+    }
+    #title-text > h3 {
+        top: 5rem;
+        width: 85%;
+        max-width: 48rem;
+    }
+    #main {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        display: grid;
+        grid-template-columns: 15rem 1fr;
+    }
+    nav h4 {
+        display: block;
+    }
+    .chuuni-text {
+        display: block;
+    }
+    nav li {
+        display: block;
+        padding-left: 1.25rem;
+    }
+    nav ul {
+        display: block;
+    }
+    nav a {
+        font: bold 1.8rem "Vera";
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+    }
+    nav.panel {
+        margin-right: .5rem;
+        margin-bottom: auto;
+        padding-bottom: 1rem;
+        text-align: left;
+        display: block;
+    }
+    nav .vr {
+        display: none;
+    }
+    #main-content {
+        margin-top: 3rem;
+    }
+    #main-content > .chuuni-text {
+        transform-origin: 0 0;
+        transform: scaleX(.9);
+        top: -.9rem;
+        text-align: right;
+        right: 1rem;
+    }
+    #main-content-info-box {
+        width: 12rem;
+    }
+    #panel-connector {
+        display: block;
+    }
+    #gallery {
+        margin-left: -12rem;
+        gap: 1rem 1rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 908px and up) */
+@media only screen and (min-width: 908px) {
+    #main-content-info-box {
+        width: 14rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}

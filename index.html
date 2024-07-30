@@ -1,12 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funny</title>
+    <title>Zack Wilson | Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
 </head>
+
 <body>
-    <p>my funny page</p>
+    <!-- Header -->
+    <header>
+        <div class="header-highlight">
+            <div class="panel-highlight" style="height: .25rem; top: 0rem;"></div>
+            <div class="panel-highlight" style="height: 2rem; top: .5rem;"></div>
+        </div>
+        <div id="title-text">
+            <h1>Zack B Wilson</h1>
+            <h3>Game Dev & Creative at Large</h3>
+        </div>
+    </header>
+
+    <!-- Slideshow banner image -->
+    <div class="scrolling-banner banner-transition"></div>
+
+    <!-- "Main" content (nav & main content area) -->
+    <div id="main">
+        <!-- Nav sidebar -->
+        <nav class="panel">
+            <p class="chuuni-text">Navigation - System OK</p>
+            <h4>Personal Data</h4>
+            <ul>
+                <a onclick="loadPage('bio')">
+                    <li>Bio</li>
+                </a>
+                <a onclick="loadPage('contact')">
+                    <li>Contact</li>
+                </a>
+            </ul>
+            <span class="vr"></span>
+            <h4>Selected Works</h4>
+            <ul>
+                <a onclick="loadPage('games')">
+                    <li>Games</li>
+                </a>
+                <a onclick="loadPage('music')">
+                    <li>Music</li>
+                </a>
+                <a onclick="loadPage('art')">
+                    <li>Art</li>
+                </a>
+                <a onclick="loadPage('other')">
+                    <li>Other</li>
+                </a>
+            </ul>
+        </nav>
+
+        <!-- Main content panel -->
+        <div class="panel" id="main-content">
+            <!-- Decoration & title -->
+            <div class="panel" id="panel-connector">
+                <div class="panel panel-connector-top-bit"></div>
+                <div class="panel panel-connector-top-bit"></div>
+                <div class="panel" id="panel-connector-line">
+                    <div class="panel"></div>
+                    <div class="panel"></div>
+                </div>
+            </div>
+            <div id="main-content-highlight">
+                <div class="panel-highlight" style="height: 1.75rem; top: 0rem;"></div>
+                <div class="panel-highlight" style="height: .2rem; top: 2rem;"></div>
+            </div>
+            <h1 id="main-content-title"></h1>
+            <p class="chuuni-text">Main Information Readout</p>
+
+            <!-- Main text -->
+            <main id="main-content-text"></main>
+
+            <!-- Info box -->
+            <div class="panel info-box" id="main-content-info-box">
+                <div class="panel info-box-image-container">
+                    <div class="panel info-box-img"></div>
+                    <h4>Info</h4>
+                </div>
+                <table>
+                </table>
+            </div>
+
+            <!-- Gallery -->
+            <div id="gallery">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p class="chuuni-text">Readout Warning - E.O.F.</p>
+        <div id="footer-highlight">
+            <div class="panel-highlight" style="height: 1.75rem; top: 0rem;"></div>
+            <div class="panel-highlight" style="height: .2rem; top: 2rem;"></div>
+        </div>
+        <div id="footer-links">
+            <span>©2024 Zack Wilson</span>
+            <span class="vr"></span>
+            <span><a href="#">Return to Top</a></span>
+        </div>
+    </footer>
+
+    <!-- Project modal -->
+    <div id="project-modal">
+        <div id="project-modal-bg"></div>
+        <div class="panel">
+            <a id="close-button">&times;</a>
+            <div class="header-highlight">
+                <div class="panel-highlight" style="height: .25rem; top: 0rem;"></div>
+                <div class="panel-highlight" style="height: 2rem; top: .5rem;"></div>
+            </div>
+            <h1>Blabla</h1>
+            <h3>Subtitle</h3>
+                <iframe id="modal-main-video"
+                    src="https://www.youtube.com/embed/videoseries?si=6uzXrzrTbWgDvQUT&amp;list=PL3wo7yv14vnryVSEQlUDVspBTSHGVNxRI"
+                    title="YouTube video player"></iframe>
+
+                <div id="modal-main-content">
+
+                    <!-- Main text -->
+                    <main>
+                        <h4>hello</h4>
+                        <p>bucko</p>
+                    </main>
+
+                    <div id="modal-right-column">
+                        <!-- Link to play/download -->
+                        <div class="panel" id="play-button">
+                            <h2><a target="_blank" rel="noopener noreferrer">Play In Browser</a></h2>
+                        </div>
+
+                        <!-- Info box -->
+                        <div class="panel info-box" id="modal-info-box">
+                            <div class="panel info-box-image-container">
+                                <div class="panel info-box-img"></div>
+                                <h4>Info</h4>
+                            </div>
+                            <table>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
 </body>
+
 </html>
