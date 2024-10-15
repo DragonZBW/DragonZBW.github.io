@@ -638,8 +638,8 @@ img.fill-100 {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    h1 {
-        font-size: 4rem;
+    h1, #main-content-title {
+        font-size: 3rem;
     }
     .header-highlight {
         top: 1.83rem;
@@ -661,7 +661,19 @@ img.fill-100 {
         padding-right: .25rem;
     }
     #main-content-info-box, #modal-info-box, #modal-right-column, #play-button {
-        width: 12rem;
+        width: 100%;
+        margin-right: -.75rem;
+    }
+    #main-content-info-box, #modal-info-box {
+        margin-bottom: 2rem;
+    }
+    #main-content-info-box {
+        margin-top: 6rem;
+    }
+    table {
+        font-size: 1em;
+        margin-left: .5rem;
+        margin-right: .5rem;
     }
     img.right, img.left {
         display: none;
@@ -670,17 +682,29 @@ img.fill-100 {
         margin-left: auto;
         margin-right: auto;
     }
-    #project-modal h3 {
-        margin-top: -.55rem;
+    h3 {
+        margin-top: .1rem;
         font-size: 1.1rem;
-        margin-left: 4rem;
+    }
+    #project-modal h1 {
+        font-size: 1.75rem;
+        margin-right: -2rem;
+        margin-top: 0rem;
+    }
+    #project-modal h3 {
+        margin-top: .825rem;
+        font-size: .75rem;
+        margin-left: 3rem;
+    }
+    img.fill {
+        width: 100%;
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     h1 {
-        font-size: 5rem;
+        font-size: 4rem;
     }
     .header-highlight {
         top: 2.3rem;
@@ -722,7 +746,8 @@ img.fill-100 {
         max-width: 10rem;
     }
     #project-modal h3 {
-        margin-top: -.75rem;
+        margin-top: .325rem;
+        font-size: 1.25rem;
         margin-left: 7rem;
     }
 }
@@ -730,7 +755,7 @@ img.fill-100 {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     h1 {
-        font-size: 6rem;
+        font-size: 5rem;
     }
     .header-highlight {
         top: 2.85rem;
@@ -808,7 +833,8 @@ img.fill-100 {
         margin-right: 3rem;
     }
     #project-modal h3 {
-        margin-top: -1rem;
+        margin-top: 0rem;
+        font-size: 1.5rem;
         margin-left: 10rem;
     }
     img.right, img.left {
