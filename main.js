@@ -189,7 +189,7 @@ function fetchPage(id, galleryItemID) {
                 // 1 - Info box + text.
                 case 1:
                     mainContent.style.flexDirection = "row";
-                    contentInfoBox.style.display = "inline-block";
+                    contentInfoBox.style.display = "block";
                     gallery.style.display = "none";
                     contentInfoBoxImg.style.backgroundImage = "url('img/" + json.infoBox.image + "')";
                     fillInfoBoxTable(contentInfoBox.querySelector("table"), json.infoBox.data);

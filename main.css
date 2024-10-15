@@ -188,8 +188,8 @@ nav > .chuuni-text {
     padding-bottom: 0;
     padding-right: 2rem;
     min-height: 30rem;
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
 }
 
 #main-content > .chuuni-text {
@@ -219,8 +219,7 @@ nav > .chuuni-text {
 
 #main-content-info-box, #modal-info-box {
     margin-top: .3rem;
-    margin-bottom: .3rem;
-    margin-bottom: auto;
+    margin-bottom: .5rem;
     float: right;
     margin-left: 1.5rem;
     margin-right: -1.7rem;
@@ -288,6 +287,7 @@ th:last-child {
 
 #main-content-text {
     padding-top: 5rem;
+    padding-bottom: .5rem;
     margin-left: 0rem;
     margin-right: 0rem;
     min-height: 12rem;
@@ -565,17 +565,10 @@ img.fill-100 {
 
 #project-modal > .panel {
     margin: 2rem;
-    margin-left: 6rem;
-    margin-right: 6rem;
 }
 
 #project-modal h1 {
     margin-top: -1rem;
-}
-
-#project-modal h3 {
-    margin-top: -1rem;
-    margin-left: 10rem;
 }
 
 #close-button {
@@ -583,6 +576,7 @@ img.fill-100 {
     font-size: 2rem;
     right: .8rem;
     top: .4rem;
+    z-index: 1000;
 }
 
 #modal-main-video {
@@ -659,14 +653,27 @@ img.fill-100 {
         max-width: 99%;
     }
     nav a {
-        font-size: 1rem;
+        font-size: 2.8vw;
+        vertical-align: middle;
     }
     nav li {
         padding-left: .25rem;
         padding-right: .25rem;
     }
-    #main-content-info-box {
+    #main-content-info-box, #modal-info-box, #modal-right-column, #play-button {
         width: 12rem;
+    }
+    img.right, img.left {
+        display: none;
+        max-width: fit-content;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #project-modal h3 {
+        margin-top: -.55rem;
+        font-size: 1.1rem;
+        margin-left: 4rem;
     }
 }
 
@@ -695,6 +702,28 @@ img.fill-100 {
     }
     #main-content-text p {
         margin-left: 1.25rem;
+    }
+    nav a {
+        font-size: 2.8vw;
+        vertical-align: middle;
+    }
+    nav li {
+        padding-left: .25rem;
+        padding-right: .25rem;
+    }
+    #main-content-info-box, #modal-info-box, #modal-right-column, #play-button {
+        width: 12rem;
+    }
+    #project-modal > .panel {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    img.right, img.left {
+        max-width: 10rem;
+    }
+    #project-modal h3 {
+        margin-top: -.75rem;
+        margin-left: 7rem;
     }
 }
 
@@ -761,7 +790,10 @@ img.fill-100 {
         text-align: right;
         right: 1rem;
     }
-    #main-content-info-box {
+    #main-content-text {
+        margin-right: 1.5rem;
+    }
+    #main-content-info-box, #modal-info-box, #modal-right-column, #play-button {
         width: 12rem;
     }
     #panel-connector {
@@ -771,12 +803,30 @@ img.fill-100 {
         margin-left: -12rem;
         gap: 1rem 1rem;
     }
+    #project-modal > .panel {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+    #project-modal h3 {
+        margin-top: -1rem;
+        margin-left: 10rem;
+    }
+    img.right, img.left {
+        max-width: 13rem;
+    }
 }
 
 /* Large devices (laptops/desktops, 908px and up) */
 @media only screen and (min-width: 908px) {
-    #main-content-info-box {
+    #main-content-info-box, #modal-info-box, #modal-right-column, #play-button {
         width: 14rem;
+    }
+    #project-modal > .panel {
+        margin-left: 6rem;
+        margin-right: 6rem;
+    }
+    img.right, img.left {
+        max-width: 16rem;
     }
 }
 
